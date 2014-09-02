@@ -3,6 +3,12 @@
 
 <ul>
 <% @restaurants.each do |restaurant| %>
-	<li><%= restaurant.name %></li>
+<% unless @user.age < 21 && restaurant.serves_alcohol == false %>
+
+	<li>
+		<%= restaurant.name %> :serves alcohol?
+		<%= restaurant.serves_alcohol %>
+	</li>
+	<% end %>
 <% end %>
 </ul>
