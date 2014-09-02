@@ -2,13 +2,13 @@
 <h4><%= @user.age %></h4>
 
 <ul>
-<% @restaurants.each do |restaurant| %>
-<% unless @user.age < 21 && restaurant.serves_alcohol == false %>
+<% @user.food_recommendations.each do |restaurant| %>
+
 
 	<li>
 		<%= restaurant.name %> :serves alcohol?
 		<%= restaurant.serves_alcohol %>
 	</li>
-	<% end %>
+
 <% end %>
 </ul>
